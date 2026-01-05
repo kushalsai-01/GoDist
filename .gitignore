@@ -1,0 +1,33 @@
+# Binaries
+/bin/
+/*.exe
+/*.dll
+/*.so
+/*.dylib
+
+# Build
+/build/
+
+# Vendored deps
+/vendor/
+
+# IDE/editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Go
+*.test
+
+# Go modules
+go.sum
+
+# Temporary files
+*.log
+*.tmp
+
+# OneDrive temp files
+~$*
