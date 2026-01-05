@@ -11,7 +11,7 @@ GoDist demonstrates:
 - A simple leader election (Bully-style, not Raft)
 - Consistency trade-offs (stale reads, partial failures, partitions)
 
-- ## Learning References
+ ## Learning References
 
 Many of the concepts explored in this project were learned and cross-checked
 using public system design resources, especially:
