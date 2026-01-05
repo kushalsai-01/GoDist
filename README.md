@@ -9,6 +9,17 @@ GoDist demonstrates:
 - Chaos / fault injection mode to make partial failures observable
 - Heartbeats, timeouts, and imperfect failure detection (suspect vs dead)
 - A simple leader election (Bully-style, not Raft)
+
+
+## What I Learned From This
+
+While building this, I repeatedly ran into the same core distributed-systems lessons:
+
+- Ownership is a routing decision, not a “storage location.” A key maps to an owner node, and then replication fans that data out.
+- Failure detection is not truth. A timeout only means “I didn’t hear back in time,” which can be caused by overload, GC pauses, or partitions.
+- Leader election is easy to implement but hard to make correct under partitions. Without a consensus protocol, split brain is always a risk.
+- Consistency is a policy choice. Quorums improve availability and correctness, but they don’t eliminate races or partitions.
+
 - Consistency trade-offs (stale reads, partial failures, partitions)
 
  ## Learning References
@@ -22,16 +33,6 @@ These resources helped with understanding high-level ideas like consistent
 hashing, replication, quorums, failure detection, and trade-offs.
 All code and implementation decisions in this repository were written manually
 to reinforce learning.
-
-
-## What I Learned From This
-
-While building this, I repeatedly ran into the same core distributed-systems lessons:
-
-- Ownership is a routing decision, not a “storage location.” A key maps to an owner node, and then replication fans that data out.
-- Failure detection is not truth. A timeout only means “I didn’t hear back in time,” which can be caused by overload, GC pauses, or partitions.
-- Leader election is easy to implement but hard to make correct under partitions. Without a consensus protocol, split brain is always a risk.
-- Consistency is a policy choice. Quorums improve availability and correctness, but they don’t eliminate races or partitions.
 
 ## Architecture Overview
 
