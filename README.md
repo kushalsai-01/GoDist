@@ -11,6 +11,19 @@ GoDist demonstrates:
 - A simple leader election (Bully-style, not Raft)
 - Consistency trade-offs (stale reads, partial failures, partitions)
 
+- ## Learning References
+
+Many of the concepts explored in this project were learned and cross-checked
+using public system design resources, especially:
+
+ awesome-system-design-resources
+
+These resources helped with understanding high-level ideas like consistent
+hashing, replication, quorums, failure detection, and trade-offs.
+All code and implementation decisions in this repository were written manually
+to reinforce learning.
+
+
 ## What I Learned From This
 
 While building this, I repeatedly ran into the same core distributed-systems lessons:
