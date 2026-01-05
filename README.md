@@ -133,9 +133,9 @@ GoDist is **eventually consistent** by default and uses **quorum-based** operati
 
 Even with `R + W > N`, partitions and coordinator races can still produce surprising results because this is not a full consensus system.
 
-## Limitations (Important)
+## Limitations 
 
-This project is intentionally not production-grade. It does **not** guarantee:
+It does **not** guarantee:
 
 - Linearizability (strong consistency)
 - Partition tolerance with strict safety (no consensus protocol)
